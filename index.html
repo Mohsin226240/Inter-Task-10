@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>StudioPress — Blog</title>
+    <meta name="description" content="A modern responsive blog homepage with categories, filters, and animations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📰</text></svg>">
+</head>
+<body>
+    <!-- Skip to content -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header -->
+    <header class="site-header" id="top">
+        <div class="container header-inner">
+            <a href="#" class="logo" aria-label="StudioPress Home">
+                <span class="logo-mark">SP</span>
+                <span class="logo-text">StudioPress</span>
+            </a>
+
+            <nav class="primary-nav" aria-label="Primary Navigation">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#posts" class="nav-link">Posts</a></li>
+                    <li><a href="#categories" class="nav-link">Categories</a></li>
+                    <li><a href="#newsletter" class="nav-link">Newsletter</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <span class="icon">🌙</span>
+                </button>
+
+                <form class="search" role="search" aria-label="Site search" id="headerSearchForm">
+                    <input type="search" id="headerSearch" name="q" placeholder="Search posts…" aria-label="Search posts">
+                    <button type="submit" aria-label="Submit search">🔎</button>
+                </form>
+
+                <button class="hamburger" id="hamburger" aria-label="Open Menu" aria-expanded="false" aria-controls="mobileMenu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <nav class="mobile-nav" id="mobileMenu" aria-label="Mobile Navigation">
+            <ul>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#posts" class="nav-link">Posts</a></li>
+                <li><a href="#categories" class="nav-link">Categories</a></li>
+                <li><a href="#newsletter" class="nav-link">Newsletter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero / Featured Post -->
+    <section class="hero" id="home">
+        <div class="container hero-inner">
+            <div class="hero-media">
+                <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1600&auto=format&fit=crop" alt="Minimal desk workspace with laptop and coffee">
+            </div>
+            <div class="hero-content">
+                <p class="eyebrow">Featured</p>
+                <h1 class="hero-title">Designing Calm Interfaces: Less Noise, More Focus</h1>
+                <p class="hero-excerpt">Discover practical strategies to reduce cognitive load, improve readability, and craft delightful experiences—backed by UX research and real-world patterns.</p>
+                <div class="hero-cta">
+                    <a href="#" class="btn primary">Read More</a>
+                    <a href="#posts" class="btn ghost">Browse Posts</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="main" class="container main-grid">
+        <!-- Posts Grid -->
+        <section class="posts" id="posts" aria-labelledby="postsHeading">
+            <div class="section-header">
+                <h2 id="postsHeading">Latest Posts</h2>
+                <div class="filters">
+                    <button class="chip active" data-filter="all">All</button>
+                    <button class="chip" data-filter="design">Design</button>
+                    <button class="chip" data-filter="development">Development</button>
+                    <button class="chip" data-filter="product">Product</button>
+                </div>
+            </div>
+
+            <div class="post-grid" id="postGrid">
+                <!-- Card 1 -->
+                <article class="post-card reveal" data-category="design">
+                    <a class="thumb" href="#">
+                        <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop" alt="Team reviewing design wireframes">
+                    </a>
+                    <div class="card-content">
+                        <div class="meta"><span>Design</span> · <time datetime="2025-05-10">May 10, 2025</time></div>
+                        <h3 class="card-title"><a href="#">Wireframe to Prototype: A Practical Guide</a></h3>
+                        <p class="excerpt">A step-by-step walkthrough for turning low-fidelity wireframes into interactive prototypes that stakeholders love.</p>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="post-card reveal" data-category="development">
+                    <a class="thumb" href="#">
+                        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Code editor on laptop with coffee mug">
+                    </a>
+                    <div class="card-content">
+                        <div class="meta"><span>Development</span> · <time datetime="2025-04-21">Apr 21, 2025</time></div>
+                        <h3 class="card-title"><a href="#">CSS Grid vs Flexbox: When to Use Which</a></h3>
+                        <p class="excerpt">Understand the strengths of Grid and Flexbox, with real layout patterns and code snippets.</p>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="post-card reveal" data-category="product">
+                    <a class="thumb" href="#">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" alt="Sticky notes on board during product workshop">
+                    </a>
+                    <div class="card-content">
+                        <div class="meta"><span>Product</span> · <time datetime="2025-03-08">Mar 8, 2025</time></div>
+                        <h3 class="card-title"><a href="#">Roadmapping That Actually Works</a></h3>
+                        <p class="excerpt">Balance strategy and execution with a simple framework that adapts to change.</p>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="post-card reveal" data-category="development">
+                    <a class="thumb" href="#">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" alt="JavaScript code on monitor">
+                    </a>
+                    <div class="card-content">
+                        <div class="meta"><span>Development</span> · <time datetime="2025-02-28">Feb 28, 2025</time></div>
+                        <h3 class="card-title"><a href="#">JavaScript Patterns for Scalable Apps</a></h3>
+                        <p class="excerpt">From modules to observers—patterns that keep your front-end codebase maintainable.</p>
+                    </div>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="post-card reveal" data-category="design">
+                    <a class="thumb" href="#">
+                        <img src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?q=80&w=1200&auto=format&fit=crop" alt="Mobile app screens on a phone">
+                    </a>
+                    <div class="card-content">
+                        <div class="meta"><span>Design</span> · <time datetime="2025-02-10">Feb 10, 2025</time></div>
+                        <h3 class="card-title"><a href="#">Typography Systems for the Web</a></h3>
+                        <p class="excerpt">Establish hierarchy and rhythm with a scalable typographic system.</p>
+                    </div>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="post-card reveal" data-category="product">
+                    <a class="thumb" href="#">
+                        <img src="https://images.unsplash.com/photo-1513491712-29cf4a0bcb7a?q=80&w=1200&auto=format&fit=crop" alt="Charts and graphs on a laptop screen">
+                    </a>
+                    <div class="card-content">
+                        <div class="meta"><span>Product</span> · <time datetime="2025-01-19">Jan 19, 2025</time></div>
+                        <h3 class="card-title"><a href="#">Metrics That Matter: North Star 101</a></h3>
+                        <p class="excerpt">Choose and track metrics that reflect customer value, not vanity.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="categories" aria-label="Sidebar">
+            <div class="widget reveal">
+                <h3 class="widget-title">Search</h3>
+                <form id="sidebarSearchForm" class="sidebar-search" role="search">
+                    <input type="search" id="sidebarSearch" placeholder="Search posts…" aria-label="Search posts">
+                    <button type="submit" aria-label="Submit search">Search</button>
+                </form>
+            </div>
+
+            <div class="widget reveal">
+                <h3 class="widget-title">Categories</h3>
+                <ul class="category-list" id="categoryList">
+                    <li><button class="link-like" data-filter="all">All</button></li>
+                    <li><button class="link-like" data-filter="design">Design</button></li>
+                    <li><button class="link-like" data-filter="development">Development</button></li>
+                    <li><button class="link-like" data-filter="product">Product</button></li>
+                </ul>
+            </div>
+
+            <div class="widget reveal">
+                <h3 class="widget-title">Recent Posts</h3>
+                <ul class="recent-posts">
+                    <li><a href="#">How To Craft Better UX Copy</a></li>
+                    <li><a href="#">Accessibility Wins in 2025</a></li>
+                    <li><a href="#">Boosting Performance with Images</a></li>
+                    <li><a href="#">Design Tokens: A Primer</a></li>
+                </ul>
+            </div>
+
+            <div class="widget reveal">
+                <h3 class="widget-title">Follow Us</h3>
+                <div class="socials">
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="YouTube">▶️</a>
+                    <a href="#" aria-label="GitHub">💻</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Newsletter / CTA -->
+    <section class="newsletter reveal" id="newsletter" aria-labelledby="newsletterHeading">
+        <div class="container newsletter-inner">
+            <div>
+                <h2 id="newsletterHeading">Get the latest in your inbox</h2>
+                <p>Actionable tips about design, development, and product—delivered once a week.</p>
+            </div>
+            <form id="newsletterForm" class="newsletter-form" novalidate>
+                <label for="email" class="visually-hidden">Email address</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                <button type="submit" class="btn primary">Subscribe</button>
+                <p class="form-msg" id="newsletterMsg" role="status" aria-live="polite"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <a href="#" class="logo footer-logo">
+                    <span class="logo-mark">SP</span>
+                    <span class="logo-text">StudioPress</span>
+                </a>
+                <p class="footer-desc">A modern blog about building beautiful, performant products.</p>
+                <div class="socials">
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="YouTube">▶️</a>
+                    <a href="#" aria-label="GitHub">💻</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+            </div>
+            <nav aria-label="Footer links">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="#posts">Latest Posts</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#newsletter">Newsletter</a></li>
+                </ul>
+            </nav>
+            <nav aria-label="Resources">
+                <h4>Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Style Guide</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="copyright">
+            <p>© <span id="year"></span> StudioPress. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+
+
